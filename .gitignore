@@ -5,11 +5,18 @@
 /front/tmp
 /front/out-tsc
 /front/bazel-out
+/back/dist
+/back/tmp
+/back/out-tsc
+/back/bazel-out
 
 # Node
 /front/node_modules
 /front/npm-debug.log
 /front/yarn-error.log
+/back/node_modules
+/back/npm-debug.log
+/back/yarn-error.log
 
 # IDEs and editors
 .idea/
