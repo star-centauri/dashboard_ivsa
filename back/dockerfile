@@ -1,0 +1,20 @@
+# Base da imagem do SO que o back vai rodar
+FROM node:16-alpine
+
+# Define o diretorio de trabalho
+WORKDIR /usr/src/app
+
+# Copiar o arquivo de dependencias do projeto
+COPY package*.json ./
+
+# Instalar as dependencias do projeto
+RUN npm install
+
+# Copiar todo o codigo do projeto para a pasta de trabalho
+COPY . .
+
+# Expor a porta do servidor Node
+EXPOSE 3000
+
+# Comando para iniciar o servidor
+CMD ["node", "index.js"]
