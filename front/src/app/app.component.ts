@@ -6,6 +6,10 @@ import { GridComponent, TitleComponent, TooltipComponent, VisualMapComponent } f
 import { BarChart, MapChart } from 'echarts/charts';
 import * as echarts from 'echarts/core';
 import rjGeo from '../assets/geojs-33-mun-rj.json';
+import { IVSA } from './models/ivsa.model';
+import { IvsaService } from './ivsa.service';
+import { HttpClientModule } from '@angular/common/http';
+import { DetailMunicipio } from './models/detail.model';
 echarts.use([
   BarChart, 
   GridComponent, 
@@ -19,7 +23,7 @@ echarts.use([
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, NgxEchartsDirective, NgxEchartsModule],
+  imports: [CommonModule, NgxEchartsDirective, NgxEchartsModule, HttpClientModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
   providers: [
@@ -28,10 +32,13 @@ echarts.use([
 })
 export class AppComponent implements OnInit {
   chartOptions: echarts.EChartsCoreOption = {};
+  municipiosIVSA: IVSA[] = [];
+  detailMunicipio: DetailMunicipio[] | null = null;
   isBrowser = false;
 
   constructor(
-    @Inject(PLATFORM_ID) private platformId: Object
+    @Inject(PLATFORM_ID) private platformId: Object,
+    private ivsaService: IvsaService
   ) {}
 
   ngOnInit(): void {
@@ -42,17 +49,22 @@ export class AppComponent implements OnInit {
       return;
     }
 
+    this.carregarDadosIVSA();
+  }
+
+  atualizarDadosMap(): void {
+    const result = this.municipiosIVSA.map((item: IVSA) => ({ name: item.municipio, value: item.valor }));
     echarts.registerMap('RJ', rjGeo as any);
 
     this.chartOptions = {
-      title: { text: 'Mapa RJ', left: 'center' },
+      title: { text: 'Índice de vulnerabilidade socioambiental - RJ', left: 'center' },
       tooltip: {
         trigger: 'item',
         formatter: (params: any) => `${params.name}<br/>Valor: ${params.value ?? 0}`
       },
       visualMap: {
         min: 0,
-        max: 100,
+        max: 1,
         left: 'left',
         top: 'bottom',
         text: ['Alto', 'Baixo'],
@@ -65,14 +77,35 @@ export class AppComponent implements OnInit {
           map: 'RJ',
           roam: true,
           label: { show: false },
-          data: [
-            // Ajuste nomes e valores conforme seu GeoJSON
-            { name: 'RIO DE JANEIRO', value: 80 },
-            { name: 'NITERÓI', value: 45 },
-            { name: 'PETRÓPOLIS', value: 70 }
-          ]
+          data: result
         }
       ]
     }
+  }
+
+  carregarDadosIVSA(): void {
+    this.ivsaService.getMunicipioIVSA().subscribe(
+      (data: IVSA[]) => {
+        this.municipiosIVSA = data;
+        this.atualizarDadosMap();
+      },
+      (error) => {
+        console.log('Erro ao carregar os dados: ', error);
+      }
+    );
+  }
+
+  onChartClick(event: any): void {
+    const municipio = event.name as string;
+    
+    // Exemplo de chamada ao backend
+    this.ivsaService.getDetalhesMunicipio(municipio).subscribe(
+      (dados: DetailMunicipio[]) => {
+        this.detailMunicipio = dados;
+      },
+      (erro) => {
+        console.error('Erro ao buscar detalhes do município:', erro);
+      }
+    );
   }
 }

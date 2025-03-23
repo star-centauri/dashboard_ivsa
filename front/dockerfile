@@ -1,14 +1,15 @@
-FROM node:18-alpine
+# Utilizar a imagem Node
+FROM node:lts-alpine
 
 WORKDIR /app
 
 # Copia somente package*.json primeiro
-COPY package*.json ./
+COPY package.json .
 
 # Instala Angular CLI
 RUN npm install -g @angular/cli
 
-# Instala dependências do projeto
+# executar processos necessarios para executar a aplicação 
 RUN npm install
 
 # Copia o restante do código

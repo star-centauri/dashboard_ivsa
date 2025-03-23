@@ -41,7 +41,7 @@ CREATE TABLE tb_IVSA (
 -- ====================================
 CREATE TABLE tb_criterio (
     id INT PRIMARY KEY,
-    nome VARCHAR(15) NOT NULL,
+    nome VARCHAR(25) NOT NULL,
     descricao VARCHAR(200) NOT NULL
 );
 

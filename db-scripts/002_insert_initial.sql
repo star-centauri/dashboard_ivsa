@@ -516,7 +516,7 @@ VALUES
 -- ====================================
 -- INSERT DA TABELA DE MULTICRITERIO
 -- ====================================
-INSERT INTO tb_multicriterio (criterio, subcriterio)
+INSERT INTO tb_multicriterio (subcriterio, criterio)
 VALUES 
 (1,  1),
 (2,  1),
@@ -539,7 +539,7 @@ VALUES
 -- ====================================
 -- INSERT DA TABELA DE INDICADORES
 -- ====================================
-INSERT INTO tb_indicadores (municipio, subcriterio, valor)
+INSERT INTO tb_indicador (municipio, subcriterio, valor)
 VALUES 
 (1,  1, 8297),
 (2,  1, 541),

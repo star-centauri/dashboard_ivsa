@@ -9,9 +9,25 @@
 
 
 <main class="main">
-  <div class="content">
-    <h1>Índice de Vulnerabilidade Socioambiental</h1>
-    <div echarts *ngIf="isBrowser" [options]="chartOptions" style="width: 100%; height: 600px;" >
+  <div class="content" style="display: flex;">
+    <div echarts *ngIf="isBrowser" [options]="chartOptions" (chartClick)="onChartClick($event)" style="width: 50%; height: 600px;" ></div>
+    <div style="width: 45%;">
+      <h3>O que é indicadores de vulnerabilidade socioambiental (IVSA)?</h3>
+      <p>
+        Uma ferramenta que mostra quais regiões e pessoas têm mais chance de serem afetadas por 
+        problemas como mudanças climáticas, crises econômicas e desafios sociais. Ele funciona como um alerta, 
+        indicando onde eventos extremos—como enchentes ou secas—podem causar mais danos. Assim, a população e 
+        autoridades podem se preparar de forma consciente para se proteger e proteger a comunidade.
+      </p>
+      <p>Para saber mais: clique em um dos munícipios para mais detalhes do indicador.</p>
+
+      <!-- Exibição dos detalhes do município -->
+      <div *ngIf="detailMunicipio && detailMunicipio.length">
+        <h3>Detalhes do Município {{ detailMunicipio[0].municipio }}:</h3>
+        <div *ngFor="let detail of detailMunicipio">
+          <p><strong>{{ detail.criterio }}:</strong> {{ detail.valor * 100 }}%</p>
+        </div>
+      </div>
     </div>
   </div>
 </main>
