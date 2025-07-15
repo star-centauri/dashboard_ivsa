@@ -10,6 +10,10 @@ import { IvsaService } from './ivsa.service';
 import { AppComponent } from './app.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
+import { routes } from './app.routes';
+import { HomeComponent } from './home/home.component';
+import { SobreComponent } from './sobre/sobre.component';
 echarts.use([
   BarChart, 
   GridComponent, 
@@ -22,14 +26,18 @@ echarts.use([
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent,
+    SobreComponent
   ],
   imports: [
     BrowserModule,
+    RouterModule.forRoot(routes),
     HttpClientModule, // Adicione o HttpClientModule aqui
     NgxEchartsModule.forRoot({ echarts }),
   ],
   providers: [IvsaService], // Adicione o serviço aos providers
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  exports: [RouterModule]
 })
 export class AppModule {}

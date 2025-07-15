@@ -36,6 +36,7 @@ app.get('/detalhe_municipio/:municipio', (req, res) => {
         SELECT 
         tm.nome AS municipio,
         tc.nome AS criterio,
+        tc.descricao AS descricao,
         tic.valor
         FROM tb_municipio tm
         INNER JOIN tb_IVSA ti ON ti.municipio = tm.id

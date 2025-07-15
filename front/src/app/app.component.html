@@ -6,31 +6,27 @@
 <!-- * * * * * * * * * Delete the template below * * * * * * * * * -->
 <!-- * * * * * * * to get started with your project! * * * * * * * -->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-
-
-<main class="main">
-  <div class="content" style="display: flex;">
-    <div echarts *ngIf="isBrowser" [options]="chartOptions" (chartClick)="onChartClick($event)" style="width: 50%; height: 600px;" ></div>
-    <div style="width: 45%;">
-      <h3>O que é indicadores de vulnerabilidade socioambiental (IVSA)?</h3>
-      <p>
-        Uma ferramenta que mostra quais regiões e pessoas têm mais chance de serem afetadas por 
-        problemas como mudanças climáticas, crises econômicas e desafios sociais. Ele funciona como um alerta, 
-        indicando onde eventos extremos—como enchentes ou secas—podem causar mais danos. Assim, a população e 
-        autoridades podem se preparar de forma consciente para se proteger e proteger a comunidade.
-      </p>
-      <p>Para saber mais: clique em um dos munícipios para mais detalhes do indicador.</p>
-
-      <!-- Exibição dos detalhes do município -->
-      <div *ngIf="detailMunicipio && detailMunicipio.length">
-        <h3>Detalhes do Município {{ detailMunicipio[0].municipio }}:</h3>
-        <div *ngFor="let detail of detailMunicipio">
-          <p><strong>{{ detail.criterio }}:</strong> {{ detail.valor * 100 }}%</p>
-        </div>
-      </div>
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" [routerLink]="['/']">IVSA</a> 
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" [routerLink]="['/']" [routerLinkActive]="['active']">Principal</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/sobre']">Sobre</a>
+        </li>
+      </ul>
     </div>
   </div>
-</main>
+</nav>
+<div class="container mt-4">
+  <router-outlet></router-outlet>
+</div>
 
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * The content above * * * * * * * * * * * * -->

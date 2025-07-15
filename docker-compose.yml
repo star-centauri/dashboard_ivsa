@@ -5,6 +5,9 @@ services:
     container_name: front_container
     ports:
       - "4200:4200"
+    volumes:
+      - ./front:/app
+      - /app/node_modules
     depends_on:
       - back
 

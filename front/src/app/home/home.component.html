@@ -1,0 +1,28 @@
+<main class="main">
+  <div class="content" style="display: flex;">
+    <div echarts *ngIf="isBrowser" [options]="chartOptions" [autoResize]="true" (chartClick)="onChartClick($event)" style="width: 60%; height: 600px;" ></div>
+    <div style="width: 45%;">
+      <p class="fw-bold fs-4">O que é o IVSA (Indicador de Vulnerabilidade Socioambiental)?</p>
+      <p>
+        É uma ferramenta que mostra quais lugares e pessoas têm mais risco de sofrer com problemas como enchentes, deslizamentos, falta d'água ou crises sociais. Funciona como um sinal de alerta, apontando onde os impactos desses problemas podem ser mais graves. Com essas informações, a população e os órgãos públicos podem se preparar melhor e agir com antecedência para evitar tragédias e proteger a comunidade.
+      </p>
+      <p class="fw-bold">Quer saber como está a sua região?</p>
+      <p>Clique em um dos municípios para ver os detalhes dos indicadores.</p>
+
+      <!-- Exibição dos detalhes do município -->
+      <div *ngIf="detailMunicipio && detailMunicipio.length">
+        <p class="fs-5">Indicadores do Município <span class="fw-bold">{{ detailMunicipio[0].municipio }}</span>:</p>
+        <div *ngFor="let detail of detailMunicipio">
+          <p>
+            <strong>{{ detail.criterio }}:</strong> 
+            {{
+              detail.criterio === 'Suportabilidade'
+                ? (100 - (detail.valor * 100))
+                : (detail.valor * 100)
+            | number:'1.2-2' }}%
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
