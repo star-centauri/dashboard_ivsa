@@ -67,7 +67,7 @@ app.get('/criticidade_municipios', (req, res) => {
         INNER JOIN tb_criterio tc ON tc.id = tic.criterio
         WHERE tc.nome = 'Criticidade'
         GROUP BY tm.nome, tic.valor
-        ORDER BY tic.nome;
+        ORDER BY tm.nome;
     `;
 
     connection.query(query, (err, results) => {
@@ -92,7 +92,7 @@ app.get('/suportabilidade_municipios', (req, res) => {
         INNER JOIN tb_criterio tc ON tc.id = tic.criterio
         WHERE tc.nome = 'Suportabilidade'
         GROUP BY tm.nome, tic.valor
-        ORDER BY tic.nome;
+        ORDER BY tm.nome;
     `;
 
     connection.query(query, (err, results) => {
@@ -117,7 +117,7 @@ app.get('/incidente_municipios', (req, res) => {
         INNER JOIN tb_criterio tc ON tc.id = tic.criterio
         WHERE tc.nome = 'Histórico Incidentes'
         GROUP BY tm.nome, tic.valor
-        ORDER BY tic.nome;
+        ORDER BY tm.nome;
     `;
 
     connection.query(query, (err, results) => {

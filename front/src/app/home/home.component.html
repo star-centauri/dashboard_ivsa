@@ -1,5 +1,5 @@
 <main class="main">
-  <div class="container" style="display: flex; background-color: #f5f7fa;">
+  <div class="px-5 py-5" style="display: flex; background-color: #f5f7fa;">
     <div echarts *ngIf="isBrowser" [options]="chartOptions" [autoResize]="true" (chartClick)="onChartClick($event)" style="width: 60%; height: 500px;" ></div>
     <div style="width: 45%;">
       <p class="fw-bold fs-4">O que é o IVSA (Indicador de Vulnerabilidade Socioambiental)?</p>
@@ -27,7 +27,7 @@
     </div>
   </div>
 
-  <div class="container" style="background-color: #100C2A; color: #f5f7fa;">
+  <div class="px-5 pb-5" style="background-color: #100C2A; color: #f5f7fa;">
     <!-- Nav tabs -->
     <ul class="nav nav-tabs nav-fill" id="myTab" role="tablist">
       <li class="nav-item" role="presentation">
@@ -50,34 +50,61 @@
     <!-- Tab panes -->
     <div class="tab-content" id="myTabContent">
       <div class="tab-pane fade show active" id="tab1" role="tabpanel" aria-labelledby="tab1-tab">
-        <div class="row">
-          <div class="col">
-            <p class="fw-bold fs-4">O que seria Criticidade no IVSA?</p>
-            <p>aghhihiuh</p>
+        <div class="row pt-2">
+          <div class="col-5">
+            <p class="fw-bold fs-4">💡O que seria Criticidade no IVSA?</p>
+            <p>
+              A criticidade é um dos indicadores do IVSA que demostra o <strong>nível de risco que uma população tem diante de desastres naturais</strong>. Mas esse risco não é só sobre o que acontece na natureza — ele também tem a ver com as condições de vida das pessoas. Ela leva em conta fatores como:
+            </p>
+            <ul>
+              <li>💸 Renda baixa, que pode dificultar a recuperação após um desastre;</li>
+              <li>🏚️ Quantidade de pessoas na moradia, o que dificulta a saída em momentos de desastres;</li>
+              <li>👵 Famílias com idosos, que podem ter dificuldade de locomoção;</li>
+              <li>👶 Famílias com crianças pequenas, que precisam de mais cuidado e atenção;</li>
+            </ul>
+            <div>👉 Neste gráfico, você pode ver como cada município se sai nesse indicador. <strong>Quanto maior a barra, maior a criticidade</strong> — ou seja, maior o risco social e ambiental para aquela população.</div>
           </div>
-          <div class="col">
+          <div class="col-7">
             <div echarts *ngIf="isBrowser" [options]="lineCriticidadeOptions" [autoResize]="true" style="height: 600px;" [theme]="'dark'"></div>
           </div>
         </div>
       </div>
       <div class="tab-pane fade" id="tab2" role="tabpanel" aria-labelledby="tab2-tab">
-        <div class="row">
-          <div class="col">
-            <p class="fw-bold fs-4">O que seria Suportabilidade no IVSA?</p>
-            <p>aghhihiuh</p>
+        <div class="row pt-2">
+          <div class="col-5">
+            <p class="fw-bold fs-4">💡O que seria Suportabilidade no IVSA?</p>
+            <p>A Suportabilidade é um indicador que analisa se a <strong>infraestrutura de uma cidade consegue atender bem à sua população</strong>, demostrando o quanto o lugar onde a pessoa vive oferece suporte básico para o bem-estar e segurança. Quando a cidade cresce rápido demais ou não tem estrutura adequada, a qualidade de vida cai e os riscos aumentam. Ele leva em conta fatores como:</p>
+            <ul>
+              <li>🗑️ Destino do lixo: muitas famílias ainda jogam o lixo em locais impróprios (como terrenos baldios ou áreas públicas), ou queimam e enterram na própria casa — o que pode gerar doenças e contaminação ambiental;</li>
+              <li>💩 Esgotamento irregular: quando a casa não está ligada à rede de esgoto e usa fossas precárias ou joga dejetos diretamente em rios, valas ou lagos, isso representa um risco enorme para a saúde pública;</li>
+              <li>🚱 Falta de água encanada: morar sem ligação à rede geral de água representa um risco a saúde e é uma das formas mais claras de ausência ao acesso básico na região;</li>
+              <li>🏥 Poucos serviços de saúde para muita gente: se a população é grande mas os postos de saúde são poucos, o atendimento se torna insuficiente, principalmente em emergências;</li>
+              <li>🌐 Falta de internet: hoje em dia, a internet é essencial para acessar serviços, educação, alerta de emergências e até buscar ajuda. A ausência dela afeta diretamente a capacidade de resposta da população.</li>
+            </ul>
+            <div>👉 Neste gráfico, você vai ver como os municípios se comportam nesse indicador de Suportabilidade. <strong>Quanto menor a barra, maior a vulnerabilidade da infraestrutura frente à demanda populacional</strong> — ou seja, mais urgente é a necessidade de melhorias nesses serviços.</div>
           </div>
-          <div class="col">
+          <div class="col-7">
             <div echarts *ngIf="isBrowser" [options]="lineSuportabilidadeOptions" [autoResize]="true" style="height: 600px;" [theme]="'dark'"></div>
           </div>
         </div>
       </div>
       <div class="tab-pane fade" id="tab3" role="tabpanel" aria-labelledby="tab3-tab">
-        <div class="row">
-          <div class="col">
-            <p class="fw-bold fs-4">O que seria Histórico de Incidentes no IVSA?</p>
-            <p>aghhihiuh</p>
+        <div class="row pt-2">
+          <div class="col-5">
+            <p class="fw-bold fs-4">💡 O que seria Histórico de Incidentes no IVSA?</p>
+            <p>O Histórico de Incidente é um indicador que mostra <strong>como desastres ambientais já afetaram os municípios no passado</strong> — e como esses eventos ajudam a entender os riscos atuais e futuros da região.</p>
+            <p>A ideia é simples: se um lugar já sofreu muito com enchentes, deslizamentos ou outros desastres, a chance de isso acontecer novamente é grande, principalmente se a infraestrutura e o planejamento urbano não forem melhorados. Ele leva em conta fatores como:</p>
+          
+            <ul>
+              <li>🌊 Quantidade de desastres hidrológicos registrados: quantas vezes já ocorreram enchentes, alagamentos ou deslizamentos no município;</li>
+              <li>👥 População afetada: quantas pessoas foram impactadas direta ou indiretamente, como perdas de bens, desalojamento, doenças ou até vítimas fatais;</li>
+              <li>🏚️ Casas afetadas: número de moradias danificadas ou destruídas — um reflexo direto da exposição das famílias e da fragilidade urbana;</li>
+              <li>🏥 Unidades de saúde atingidas: quando hospitais ou postos de saúde são afetados, o problema é duplo: além do desastre em si, a capacidade de atendimento também é prejudicada.</li>
+            </ul>
+
+            <p>👉 Neste gráfico, você pode visualizar quais municípios têm um histórico mais crítico de desastres ambientais. Quanto maior a barra, maior o impacto acumulado — o que sinaliza áreas com alta urgência para planejamento, prevenção e adaptação.</p>
           </div>
-          <div class="col">
+          <div class="col-7">
             <div echarts *ngIf="isBrowser" [options]="lineIncidenteOptions" [autoResize]="true" style="height: 600px;" [theme]="'dark'"></div>
           </div>
         </div>
