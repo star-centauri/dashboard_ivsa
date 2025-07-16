@@ -16,6 +16,21 @@ export class IvsaService {
     return this.http.get<IVSA[]>(this.apiUrl);
   }
 
+  getCriticidadePorMunicipio(): Observable<IVSA[]> {
+    const url = `${this.apiUrl}criticidade_municipios`;
+    return this.http.get<IVSA[]>(url);
+  }
+
+  getSuportabilidadePorMunicipio(): Observable<IVSA[]> {
+    const url = `${this.apiUrl}suportabilidade_municipios`;
+    return this.http.get<IVSA[]>(url);
+  }
+
+  getIncidentePorMunicipio(): Observable<IVSA[]> {
+    const url = `${this.apiUrl}incidente_municipios`;
+    return this.http.get<IVSA[]>(url);
+  }
+
   getDetalhesMunicipio(municipio: string): Observable<DetailMunicipio[]> {
     const url = `${this.apiUrl}detalhe_municipio/${municipio}`;
     return this.http.get<DetailMunicipio[]>(url);

@@ -1,4 +1,8 @@
 import {
+  init_install,
+  install
+} from "./chunk-GKQGY43M.js";
+import {
   AxisBuilder_default,
   AxisView_default,
   BrushController_default,
@@ -13,10 +17,10 @@ import {
   collect,
   convertFromEC4CompatibleStyle,
   getAxisInfo,
-  install,
-  install2,
-  install3,
-  install4,
+  install as install2,
+  install2 as install3,
+  install3 as install4,
+  install4 as install5,
   isCoordinateSystemType,
   isEC4CompatibleStyle,
   isTransitionAll,
@@ -30,7 +34,7 @@ import {
   sliderMove,
   stopPreviousKeyframeAnimationAndRestore,
   updateLeaveTo
-} from "./chunk-32ZB6FXE.js";
+} from "./chunk-I4JZV4SQ.js";
 import {
   AxisModelCommonMixin,
   Axis_default,
@@ -49,14 +53,12 @@ import {
   Polygon_default,
   Polyline_default,
   Ring_default,
-  SERIES_LAYOUT_BY_COLUMN,
   SINGLE_REFERRING,
   SOURCE_FORMAT_ARRAY_ROWS,
   SOURCE_FORMAT_OBJECT_ROWS,
   Sector_default,
   SeriesData_default,
   SortOrderComparator,
-  SourceManager,
   Time_default,
   TooltipMarkupStyleCreator,
   __extends,
@@ -80,7 +82,6 @@ import {
   createTooltipMarkup,
   defaultEmphasis,
   deprecateLog,
-  disableTransformOptionMerge,
   enableHoverEmphasis,
   ensureScaleRawExtentInfo,
   enterBlur,
@@ -113,6 +114,48 @@ import {
   graphic_exports,
   groupTransition,
   inheritDefaultOption,
+  init_Axis,
+  init_Component,
+  init_Component2,
+  init_DataDiffer,
+  init_Interval,
+  init_LinearGradient,
+  init_Model,
+  init_Ordinal,
+  init_SeriesData,
+  init_Time,
+  init_axisHelper,
+  init_axisModelCommonMixin,
+  init_basicTransition,
+  init_component,
+  init_dataFormat,
+  init_dataStackHelper,
+  init_dataValueHelper,
+  init_decal,
+  init_echarts,
+  init_event as init_event2,
+  init_extension,
+  init_format,
+  init_graphic,
+  init_helper,
+  init_innerStore,
+  init_internalComponentCreator,
+  init_labelStyle,
+  init_layout,
+  init_locale,
+  init_log,
+  init_model,
+  init_number,
+  init_palette,
+  init_polygon,
+  init_scaleRawExtentInfo,
+  init_states,
+  init_symbol,
+  init_throttle,
+  init_time,
+  init_tooltipMarkup,
+  init_tslib_es6,
+  init_types,
   isDimensionStacked,
   isNameSpecified,
   leaveBlur,
@@ -159,7 +202,7 @@ import {
   use,
   warn,
   windowOpen
-} from "./chunk-75B3OZEY.js";
+} from "./chunk-EXFL2HOC.js";
 import {
   BoundingRect_default,
   Displayable_default,
@@ -172,7 +215,7 @@ import {
   assert,
   bind,
   clone,
-  create,
+  create2 as create,
   createHashMap,
   curry,
   defaults,
@@ -184,6 +227,17 @@ import {
   getBoundingRect,
   hasOwn,
   indexOf,
+  init_BoundingRect,
+  init_Displayable,
+  init_Image,
+  init_Text,
+  init_color,
+  init_dom,
+  init_env,
+  init_event,
+  init_matrix,
+  init_text,
+  init_util,
   isArray,
   isArrayLike,
   isDom,
@@ -211,10 +265,18 @@ import {
   transformLocalCoord,
   translate,
   trim
-} from "./chunk-QQQV7X5A.js";
-import "./chunk-XWLXMCJQ.js";
+} from "./chunk-JTAMZJCF.js";
+import "./chunk-DZYXDVEG.js";
+
+// node_modules/echarts/lib/component/axisPointer/CartesianAxisPointer.js
+init_tslib_es6();
 
 // node_modules/echarts/lib/component/axisPointer/BaseAxisPointer.js
+init_util();
+init_graphic();
+init_event();
+init_throttle();
+init_model();
 var inner = makeInner();
 var clone2 = clone;
 var bind2 = bind;
@@ -491,6 +553,13 @@ function updateMandatoryProps(group, axisPointerModel, silent) {
 var BaseAxisPointer_default = BaseAxisPointer;
 
 // node_modules/echarts/lib/component/axisPointer/viewHelper.js
+init_util();
+init_graphic();
+init_text();
+init_format();
+init_matrix();
+init_axisHelper();
+init_labelStyle();
 function buildElStyle(axisPointerModel) {
   var axisPointerType = axisPointerModel.get("type");
   var styleModel = axisPointerModel.getModel(axisPointerType + "Style");
@@ -731,6 +800,8 @@ function getAxisDimIndex(axis) {
 var CartesianAxisPointer_default = CartesianAxisPointer;
 
 // node_modules/echarts/lib/component/axisPointer/AxisPointerModel.js
+init_tslib_es6();
+init_Component();
 var AxisPointerModel = (
   /** @class */
   function(_super) {
@@ -802,7 +873,13 @@ var AxisPointerModel = (
 );
 var AxisPointerModel_default = AxisPointerModel;
 
+// node_modules/echarts/lib/component/axisPointer/AxisPointerView.js
+init_tslib_es6();
+
 // node_modules/echarts/lib/component/axisPointer/globalListener.js
+init_util();
+init_env();
+init_model();
 var inner2 = makeInner();
 var each2 = each;
 function register(key, api, handler) {
@@ -884,6 +961,7 @@ function unregister(key, api) {
 }
 
 // node_modules/echarts/lib/component/axisPointer/AxisPointerView.js
+init_Component2();
 var AxisPointerView = (
   /** @class */
   function(_super) {
@@ -919,7 +997,15 @@ var AxisPointerView = (
 );
 var AxisPointerView_default = AxisPointerView;
 
+// node_modules/echarts/lib/component/axisPointer/install.js
+init_util();
+
+// node_modules/echarts/lib/component/axisPointer/axisTrigger.js
+init_model();
+
 // node_modules/echarts/lib/component/axisPointer/findPointFromSeries.js
+init_util();
+init_model();
 function findPointFromSeries(finder, ecModel) {
   var point = [];
   var seriesIndex = finder.seriesIndex;
@@ -969,6 +1055,7 @@ function findPointFromSeries(finder, ecModel) {
 }
 
 // node_modules/echarts/lib/component/axisPointer/axisTrigger.js
+init_util();
 var inner3 = makeInner();
 function axisTrigger(payload, ecModel, api) {
   var currTrigger = payload.currTrigger;
@@ -1256,7 +1343,7 @@ function illegalPoint(point) {
 }
 
 // node_modules/echarts/lib/component/axisPointer/install.js
-function install5(registers) {
+function install6(registers) {
   AxisView_default.registerAxisPointerClass("CartesianAxisPointer", CartesianAxisPointer_default);
   registers.registerComponentModel(AxisPointerModel_default);
   registers.registerComponentView(AxisPointerView_default);
@@ -1280,12 +1367,20 @@ function install5(registers) {
 }
 
 // node_modules/echarts/lib/component/grid/install.js
-function install6(registers) {
-  use(install);
-  use(install5);
+init_extension();
+function install7(registers) {
+  use(install2);
+  use(install6);
 }
 
+// node_modules/echarts/lib/component/polar/install.js
+init_tslib_es6();
+init_extension();
+
 // node_modules/echarts/lib/component/axisPointer/PolarAxisPointer.js
+init_tslib_es6();
+init_graphic();
+init_matrix();
 var PolarAxisPointer = (
   /** @class */
   function(_super) {
@@ -1386,6 +1481,8 @@ var pointerShapeBuilder2 = {
 var PolarAxisPointer_default = PolarAxisPointer;
 
 // node_modules/echarts/lib/coord/polar/PolarModel.js
+init_tslib_es6();
+init_Component();
 var PolarModel = (
   /** @class */
   function(_super) {
@@ -1419,6 +1516,11 @@ var PolarModel = (
 var PolarModel_default = PolarModel;
 
 // node_modules/echarts/lib/coord/polar/AxisModel.js
+init_tslib_es6();
+init_util();
+init_Component();
+init_axisModelCommonMixin();
+init_model();
 var PolarAxisModel = (
   /** @class */
   function(_super) {
@@ -1461,7 +1563,12 @@ var RadiusAxisModel = (
   }(PolarAxisModel)
 );
 
+// node_modules/echarts/lib/coord/polar/polarCreator.js
+init_util();
+
 // node_modules/echarts/lib/coord/polar/RadiusAxis.js
+init_tslib_es6();
+init_Axis();
 var RadiusAxis = (
   /** @class */
   function(_super) {
@@ -1480,6 +1587,10 @@ RadiusAxis.prototype.radiusToData = Axis_default.prototype.coordToData;
 var RadiusAxis_default = RadiusAxis;
 
 // node_modules/echarts/lib/coord/polar/AngleAxis.js
+init_tslib_es6();
+init_text();
+init_Axis();
+init_model();
 var inner4 = makeInner();
 var AngleAxis = (
   /** @class */
@@ -1661,6 +1772,9 @@ function getCoordSys(finder) {
 var Polar_default = Polar;
 
 // node_modules/echarts/lib/coord/polar/polarCreator.js
+init_number();
+init_axisHelper();
+init_model();
 function resizePolar(polar, polarModel, api) {
   var center = polarModel.get("center");
   var width = api.getWidth();
@@ -1757,6 +1871,12 @@ var polarCreator = {
 var polarCreator_default = polarCreator;
 
 // node_modules/echarts/lib/component/axis/AngleAxisView.js
+init_tslib_es6();
+init_util();
+init_graphic();
+init_labelStyle();
+init_Model();
+init_innerStore();
 var elementList = ["axisLine", "axisLabel", "axisTick", "minorTick", "splitLine", "minorSplitLine", "splitArea"];
 function getAxisLineShape(polar, rExtent, angle) {
   rExtent[1] > rExtent[0] && (rExtent = rExtent.slice().reverse());
@@ -2026,6 +2146,9 @@ var angelAxisElementsBuilders = {
 var AngleAxisView_default = AngleAxisView;
 
 // node_modules/echarts/lib/component/axis/RadiusAxisView.js
+init_tslib_es6();
+init_util();
+init_graphic();
 var axisBuilderAttrs = ["axisLine", "axisTickLabel", "axisName"];
 var selfBuilderAttrs = ["splitLine", "splitArea", "minorSplitLine"];
 var RadiusAxisView = (
@@ -2181,7 +2304,14 @@ function layoutAxis(polar, radiusAxisModel, axisAngle) {
 }
 var RadiusAxisView_default = RadiusAxisView;
 
+// node_modules/echarts/lib/component/polar/install.js
+init_Component2();
+init_util();
+
 // node_modules/echarts/lib/layout/barPolar.js
+init_util();
+init_number();
+init_dataStackHelper();
 function getSeriesStackId(seriesModel) {
   return seriesModel.get("stack") || "__ec_stack_" + seriesModel.seriesIndex;
 }
@@ -2399,8 +2529,8 @@ var PolarView = (
     return PolarView2;
   }(Component_default2)
 );
-function install7(registers) {
-  use(install5);
+function install8(registers) {
+  use(install6);
   AxisView_default.registerAxisPointerClass("PolarAxisPointer", PolarAxisPointer_default);
   registers.registerCoordinateSystem("polar", polarCreator_default);
   registers.registerComponentModel(PolarModel_default);
@@ -2412,7 +2542,18 @@ function install7(registers) {
   registers.registerLayout(curry(barPolar_default, "bar"));
 }
 
+// node_modules/echarts/lib/component/singleAxis/install.js
+init_tslib_es6();
+init_extension();
+init_Component2();
+
+// node_modules/echarts/lib/component/axis/SingleAxisView.js
+init_tslib_es6();
+init_util();
+init_graphic();
+
 // node_modules/echarts/lib/coord/single/singleAxisHelper.js
+init_util();
 function layout2(axisModel, opt) {
   opt = opt || {};
   var single = axisModel.coordinateSystem;
@@ -2560,6 +2701,10 @@ var axisElementBuilders2 = {
 var SingleAxisView_default = SingleAxisView;
 
 // node_modules/echarts/lib/coord/single/AxisModel.js
+init_tslib_es6();
+init_Component();
+init_axisModelCommonMixin();
+init_util();
 var SingleAxisModel = (
   /** @class */
   function(_super) {
@@ -2621,6 +2766,8 @@ mixin(SingleAxisModel, AxisModelCommonMixin.prototype);
 var AxisModel_default = SingleAxisModel;
 
 // node_modules/echarts/lib/coord/single/SingleAxis.js
+init_tslib_es6();
+init_Axis();
 var SingleAxis = (
   /** @class */
   function(_super) {
@@ -2644,6 +2791,9 @@ var SingleAxis = (
 var SingleAxis_default = SingleAxis;
 
 // node_modules/echarts/lib/coord/single/Single.js
+init_axisHelper();
+init_layout();
+init_util();
 var singleDimensions = ["single"];
 var Single = (
   /** @class */
@@ -2781,6 +2931,7 @@ function getCoordSys2(finder) {
 var Single_default = Single;
 
 // node_modules/echarts/lib/coord/single/singleCreator.js
+init_model();
 function create2(ecModel, api) {
   var singles = [];
   ecModel.eachComponent("singleAxis", function(axisModel, idx) {
@@ -2805,6 +2956,7 @@ var singleCreator = {
 var singleCreator_default = singleCreator;
 
 // node_modules/echarts/lib/component/axisPointer/SingleAxisPointer.js
+init_tslib_es6();
 var XY = ["x", "y"];
 var WH = ["width", "height"];
 var SingleAxisPointer = (
@@ -2917,8 +3069,8 @@ var SingleView = (
     return SingleView2;
   }(Component_default2)
 );
-function install8(registers) {
-  use(install5);
+function install9(registers) {
+  use(install6);
   AxisView_default.registerAxisPointerClass("SingleAxisPointer", SingleAxisPointer_default);
   registers.registerComponentView(SingleView);
   registers.registerComponentView(SingleAxisView_default);
@@ -2928,6 +3080,10 @@ function install8(registers) {
 }
 
 // node_modules/echarts/lib/coord/calendar/CalendarModel.js
+init_tslib_es6();
+init_util();
+init_Component();
+init_layout();
 var CalendarModel = (
   /** @class */
   function(_super) {
@@ -3034,6 +3190,14 @@ function mergeAndNormalizeLayoutParams(target, raw) {
 var CalendarModel_default = CalendarModel;
 
 // node_modules/echarts/lib/component/calendar/CalendarView.js
+init_tslib_es6();
+init_util();
+init_graphic();
+init_labelStyle();
+init_format();
+init_number();
+init_Component2();
+init_locale();
 var CalendarView = (
   /** @class */
   function(_super) {
@@ -3362,6 +3526,9 @@ var CalendarView = (
 var CalendarView_default = CalendarView;
 
 // node_modules/echarts/lib/coord/calendar/Calendar.js
+init_util();
+init_layout();
+init_number();
 var PROXIMATE_ONE_DAY = 864e5;
 var Calendar = (
   /** @class */
@@ -3623,13 +3790,21 @@ function getCoordSys3(finder) {
 var Calendar_default = Calendar;
 
 // node_modules/echarts/lib/component/calendar/install.js
-function install9(registers) {
+function install10(registers) {
   registers.registerComponentModel(CalendarModel_default);
   registers.registerComponentView(CalendarView_default);
   registers.registerCoordinateSystem("calendar", Calendar_default);
 }
 
+// node_modules/echarts/lib/component/graphic/install.js
+init_util();
+
 // node_modules/echarts/lib/component/graphic/GraphicModel.js
+init_tslib_es6();
+init_util();
+init_model();
+init_Component();
+init_layout();
 function setKeyInfoToNewElOption(resultItem, newElOption) {
   var existElOption = resultItem.existing;
   newElOption.id = resultItem.keyInfo.id;
@@ -3791,6 +3966,16 @@ var GraphicComponentModel = (
 );
 
 // node_modules/echarts/lib/component/graphic/GraphicView.js
+init_tslib_es6();
+init_util();
+init_Displayable();
+init_model();
+init_graphic();
+init_layout();
+init_number();
+init_Component2();
+init_innerStore();
+init_basicTransition();
 var nonShapeGraphicElements = {
   // Reserved but not supported in graphic component.
   path: null,
@@ -4089,7 +4274,7 @@ function setEventData(el, graphicModel, elOption) {
 }
 
 // node_modules/echarts/lib/component/graphic/install.js
-function install10(registers) {
+function install11(registers) {
   registers.registerComponentModel(GraphicComponentModel);
   registers.registerComponentView(GraphicComponentView);
   registers.registerPreprocessor(function(option) {
@@ -4110,7 +4295,19 @@ function install10(registers) {
   });
 }
 
+// node_modules/echarts/lib/component/toolbox/install.js
+init_extension();
+
+// node_modules/echarts/lib/component/dataZoom/SelectZoomModel.js
+init_tslib_es6();
+
+// node_modules/echarts/lib/component/dataZoom/DataZoomModel.js
+init_tslib_es6();
+init_util();
+init_Component();
+
 // node_modules/echarts/lib/component/dataZoom/helper.js
+init_util();
 var DATA_ZOOM_AXIS_DIMENSIONS = ["x", "y", "radius", "angle", "single"];
 var SERIES_COORDS = ["cartesian2d", "polar", "singleAxis"];
 function isCoordSupported(seriesModel) {
@@ -4199,6 +4396,7 @@ function collectReferCoordSysModelInfo(dataZoomModel) {
 }
 
 // node_modules/echarts/lib/component/dataZoom/DataZoomModel.js
+init_model();
 var DataZoomAxisInfo = (
   /** @class */
   function() {
@@ -4508,7 +4706,12 @@ var SelectDataZoomModel = (
 );
 var SelectZoomModel_default = SelectDataZoomModel;
 
+// node_modules/echarts/lib/component/dataZoom/SelectZoomView.js
+init_tslib_es6();
+
 // node_modules/echarts/lib/component/dataZoom/DataZoomView.js
+init_tslib_es6();
+init_Component2();
 var DataZoomView = (
   /** @class */
   function(_super) {
@@ -4545,7 +4748,15 @@ var SelectDataZoomView = (
 );
 var SelectZoomView_default = SelectDataZoomView;
 
+// node_modules/echarts/lib/component/dataZoom/dataZoomProcessor.js
+init_util();
+
 // node_modules/echarts/lib/component/dataZoom/AxisProxy.js
+init_util();
+init_number();
+init_axisHelper();
+init_scaleRawExtentInfo();
+init_model();
 var each3 = each;
 var asc2 = asc;
 var AxisProxy = (
@@ -4809,6 +5020,7 @@ var dataZoomProcessor = {
 var dataZoomProcessor_default = dataZoomProcessor;
 
 // node_modules/echarts/lib/component/dataZoom/dataZoomAction.js
+init_util();
 function installDataZoomAction(registers) {
   registers.registerAction("dataZoom", function(payload, ecModel) {
     var effectedModels = findEffectedDataZooms(ecModel, payload);
@@ -4838,11 +5050,15 @@ function installCommon(registers) {
 }
 
 // node_modules/echarts/lib/component/dataZoom/installDataZoomSelect.js
-function install11(registers) {
+function install12(registers) {
   registers.registerComponentModel(SelectZoomModel_default);
   registers.registerComponentView(SelectZoomView_default);
   installCommon(registers);
 }
+
+// node_modules/echarts/lib/component/toolbox/ToolboxModel.js
+init_tslib_es6();
+init_util();
 
 // node_modules/echarts/lib/component/toolbox/featureManager.js
 var ToolboxFeature = (
@@ -4862,6 +5078,7 @@ function getFeature(name) {
 }
 
 // node_modules/echarts/lib/component/toolbox/ToolboxModel.js
+init_Component();
 var ToolboxModel = (
   /** @class */
   function(_super) {
@@ -4927,7 +5144,19 @@ var ToolboxModel = (
 );
 var ToolboxModel_default = ToolboxModel;
 
+// node_modules/echarts/lib/component/toolbox/ToolboxView.js
+init_tslib_es6();
+init_util();
+init_text();
+init_graphic();
+init_states();
+init_Model();
+init_DataDiffer();
+
 // node_modules/echarts/lib/component/helper/listComponent.js
+init_layout();
+init_format();
+init_graphic();
 function layout3(group, componentModel, api) {
   var boxLayoutParams = componentModel.getBoxLayoutParams();
   var padding = componentModel.get("padding");
@@ -4959,6 +5188,10 @@ function makeBackground(rect, componentModel) {
 }
 
 // node_modules/echarts/lib/component/toolbox/ToolboxView.js
+init_Component2();
+init_component();
+init_Text();
+init_labelStyle();
 var ToolboxView = (
   /** @class */
   function(_super) {
@@ -5175,6 +5408,8 @@ function isUserFeatureName(featureName) {
 var ToolboxView_default = ToolboxView;
 
 // node_modules/echarts/lib/component/toolbox/feature/SaveAsImage.js
+init_tslib_es6();
+init_env();
 var SaveAsImage = (
   /** @class */
   function(_super) {
@@ -5266,6 +5501,10 @@ var SaveAsImage = (
 var SaveAsImage_default = SaveAsImage;
 
 // node_modules/echarts/lib/component/toolbox/feature/MagicType.js
+init_tslib_es6();
+init_echarts();
+init_util();
+init_model();
 var INNER_STACK_KEYWORD = "__ec_magicType_stack__";
 var radioTypes = [["line", "bar"], ["stack"]];
 var MagicType = (
@@ -5422,6 +5661,11 @@ registerAction({
 var MagicType_default = MagicType;
 
 // node_modules/echarts/lib/component/toolbox/feature/DataView.js
+init_tslib_es6();
+init_echarts();
+init_util();
+init_event();
+init_log();
 var BLOCK_SPLITER = new Array(60).join("-");
 var ITEM_SPLITER = "	";
 function groupSeries(ecModel) {
@@ -5782,7 +6026,13 @@ registerAction({
 });
 var DataView_default = DataView;
 
+// node_modules/echarts/lib/component/toolbox/feature/Restore.js
+init_tslib_es6();
+init_echarts();
+
 // node_modules/echarts/lib/component/dataZoom/history.js
+init_util();
+init_model();
 var each4 = each;
 var inner6 = makeInner();
 function push(ecModel, newSnapshot) {
@@ -5879,7 +6129,14 @@ registerAction({
 });
 var Restore_default = RestoreOption;
 
+// node_modules/echarts/lib/component/toolbox/feature/DataZoom.js
+init_tslib_es6();
+init_util();
+
 // node_modules/echarts/lib/component/helper/BrushTargetManager.js
+init_util();
+init_graphic();
+init_model();
 var INCLUDE_FINDER_MAIN_TYPES = ["grid", "xAxis", "yAxis", "geo", "graph", "polar", "radiusAxis", "angleAxis", "bmap"];
 var BrushTargetManager = (
   /** @class */
@@ -6144,6 +6401,8 @@ function getSize(xyMinMax) {
 var BrushTargetManager_default = BrushTargetManager;
 
 // node_modules/echarts/lib/component/toolbox/feature/DataZoom.js
+init_model();
+init_internalComponentCreator();
 var each5 = each;
 var DATA_ZOOM_ID_BASE = makeInternalComponentId("toolbox-dataZoom_");
 var DataZoomFeature = (
@@ -6340,7 +6599,7 @@ registerInternalOptionCreator("dataZoom", function(ecModel) {
 var DataZoom_default = DataZoomFeature;
 
 // node_modules/echarts/lib/component/toolbox/install.js
-function install12(registers) {
+function install13(registers) {
   registers.registerComponentModel(ToolboxModel_default);
   registers.registerComponentView(ToolboxView_default);
   registerFeature("saveAsImage", SaveAsImage_default);
@@ -6348,10 +6607,15 @@ function install12(registers) {
   registerFeature("dataView", DataView_default);
   registerFeature("dataZoom", DataZoom_default);
   registerFeature("restore", Restore_default);
-  use(install11);
+  use(install12);
 }
 
+// node_modules/echarts/lib/component/tooltip/install.js
+init_extension();
+
 // node_modules/echarts/lib/component/tooltip/TooltipModel.js
+init_tslib_es6();
+init_Component();
 var TooltipModel = (
   /** @class */
   function(_super) {
@@ -6435,7 +6699,21 @@ var TooltipModel = (
 );
 var TooltipModel_default = TooltipModel;
 
+// node_modules/echarts/lib/component/tooltip/TooltipView.js
+init_tslib_es6();
+init_util();
+init_env();
+
+// node_modules/echarts/lib/component/tooltip/TooltipHTMLContent.js
+init_util();
+init_event();
+init_dom();
+init_env();
+init_format();
+
 // node_modules/echarts/lib/component/tooltip/helper.js
+init_format();
+init_env();
 function shouldTooltipConfine(tooltipModel) {
   var confineOption = tooltipModel.get("confine");
   return confineOption != null ? !!confineOption : tooltipModel.get("renderMode") === "richText";
@@ -6468,6 +6746,7 @@ function getComputedStyle(el, style) {
 }
 
 // node_modules/echarts/lib/component/tooltip/TooltipHTMLContent.js
+init_tooltipMarkup();
 var CSS_TRANSITION_VENDOR = toCSSVendorPrefix(TRANSITION_VENDOR, "transition");
 var CSS_TRANSFORM_VENDOR = toCSSVendorPrefix(TRANSFORM_VENDOR, "transform");
 var gCssText = "position:absolute;display:block;border-style:solid;white-space:nowrap;z-index:9999999;" + (env_default.transform3dSupported ? "will-change:transform;" : "");
@@ -6760,6 +7039,10 @@ var TooltipHTMLContent = (
 var TooltipHTMLContent_default = TooltipHTMLContent;
 
 // node_modules/echarts/lib/component/tooltip/TooltipRichContent.js
+init_util();
+init_Text();
+init_tooltipMarkup();
+init_log();
 var TooltipRichContent = (
   /** @class */
   function() {
@@ -6909,6 +7192,20 @@ function makeStyleCoord2(out, zr, zrX, zrY) {
 var TooltipRichContent_default = TooltipRichContent;
 
 // node_modules/echarts/lib/component/tooltip/TooltipView.js
+init_format();
+init_number();
+init_graphic();
+init_layout();
+init_Model();
+init_axisHelper();
+init_model();
+init_Component2();
+init_time();
+init_innerStore();
+init_dataFormat();
+init_tooltipMarkup();
+init_event2();
+init_throttle();
 var proxyRect = new Rect_default({
   shape: {
     x: -1,
@@ -7577,8 +7874,9 @@ function findComponentReference(payload, ecModel, api) {
 var TooltipView_default = TooltipView;
 
 // node_modules/echarts/lib/component/tooltip/install.js
-function install13(registers) {
-  use(install5);
+init_util();
+function install14(registers) {
+  use(install6);
   registers.registerComponentModel(TooltipModel_default);
   registers.registerComponentView(TooltipView_default);
   registers.registerAction({
@@ -7594,6 +7892,8 @@ function install13(registers) {
 }
 
 // node_modules/echarts/lib/component/brush/preprocessor.js
+init_util();
+init_model();
 var DEFAULT_TOOLBOX_BTNS = ["rect", "polygon", "keep", "clear"];
 function brushPreprocessor(option, isNew) {
   var brushComponents = normalizeToArray(option ? option.brush : []);
@@ -7637,7 +7937,17 @@ function removeDuplicate(arr) {
   });
 }
 
+// node_modules/echarts/lib/component/brush/BrushView.js
+init_tslib_es6();
+init_util();
+
+// node_modules/echarts/lib/component/brush/visualEncoding.js
+init_util();
+init_BoundingRect();
+
 // node_modules/echarts/lib/visual/visualSolution.js
+init_util();
+init_helper();
 var each6 = each;
 function hasKeys(obj) {
   if (obj) {
@@ -7765,6 +8075,9 @@ function incrementalApplyVisual(stateList, visualMappings, getValueState, dim) {
 }
 
 // node_modules/echarts/lib/component/brush/selector.js
+init_polygon();
+init_BoundingRect();
+init_graphic();
 function makeBrushCommonSelectorForSeries(area) {
   var brushType = area.brushType;
   var selectors = {
@@ -7834,6 +8147,7 @@ function inLineRange(p, range) {
 }
 
 // node_modules/echarts/lib/component/brush/visualEncoding.js
+init_throttle();
 var STATE_LIST = ["inBrush", "outOfBrush"];
 var DISPATCH_METHOD = "__ecBrushSelect";
 var DISPATCH_FLAG = "__ecInBrushSelectEvent";
@@ -8008,6 +8322,7 @@ function getBoundingRectFromMinMax(minMax) {
 }
 
 // node_modules/echarts/lib/component/brush/BrushView.js
+init_Component2();
 var BrushView = (
   /** @class */
   function(_super) {
@@ -8066,6 +8381,10 @@ var BrushView = (
 var BrushView_default = BrushView;
 
 // node_modules/echarts/lib/component/brush/BrushModel.js
+init_tslib_es6();
+init_util();
+init_Model();
+init_Component();
 var DEFAULT_OUT_OF_BRUSH_COLOR = "#ddd";
 var BrushModel = (
   /** @class */
@@ -8140,6 +8459,8 @@ function generateBrushOption(option, brushOption) {
 var BrushModel_default = BrushModel;
 
 // node_modules/echarts/lib/component/toolbox/feature/Brush.js
+init_tslib_es6();
+init_util();
 var ICON_TYPES = ["rect", "polygon", "lineX", "lineY", "keep", "clear"];
 var BrushFeature = (
   /** @class */
@@ -8232,7 +8553,8 @@ var BrushFeature = (
 var Brush_default = BrushFeature;
 
 // node_modules/echarts/lib/component/brush/install.js
-function install14(registers) {
+init_util();
+function install15(registers) {
   registers.registerComponentView(BrushView_default);
   registers.registerComponentModel(BrushModel_default);
   registers.registerPreprocessor(brushPreprocessor);
@@ -8263,6 +8585,15 @@ function install14(registers) {
 }
 
 // node_modules/echarts/lib/component/title/install.js
+init_tslib_es6();
+init_util();
+init_graphic();
+init_innerStore();
+init_labelStyle();
+init_layout();
+init_Component();
+init_Component2();
+init_format();
 var TitleModel = (
   /** @class */
   function(_super) {
@@ -8429,12 +8760,20 @@ var TitleView = (
     return TitleView2;
   }(Component_default2)
 );
-function install15(registers) {
+function install16(registers) {
   registers.registerComponentModel(TitleModel);
   registers.registerComponentView(TitleView);
 }
 
+// node_modules/echarts/lib/component/timeline/SliderTimelineModel.js
+init_tslib_es6();
+
 // node_modules/echarts/lib/component/timeline/TimelineModel.js
+init_tslib_es6();
+init_Component();
+init_SeriesData();
+init_util();
+init_model();
 var TimelineModel = (
   /** @class */
   function(_super) {
@@ -8552,6 +8891,9 @@ var TimelineModel = (
 var TimelineModel_default = TimelineModel;
 
 // node_modules/echarts/lib/component/timeline/SliderTimelineModel.js
+init_dataFormat();
+init_util();
+init_component();
 var SliderTimelineModel = (
   /** @class */
   function(_super) {
@@ -8664,7 +9006,17 @@ var SliderTimelineModel = (
 mixin(SliderTimelineModel, DataFormatMixin.prototype);
 var SliderTimelineModel_default = SliderTimelineModel;
 
+// node_modules/echarts/lib/component/timeline/SliderTimelineView.js
+init_tslib_es6();
+init_BoundingRect();
+init_matrix();
+init_graphic();
+init_labelStyle();
+init_layout();
+
 // node_modules/echarts/lib/component/timeline/TimelineView.js
+init_tslib_es6();
+init_Component2();
 var TimelineView = (
   /** @class */
   function(_super) {
@@ -8681,6 +9033,8 @@ var TimelineView = (
 var TimelineView_default = TimelineView;
 
 // node_modules/echarts/lib/component/timeline/TimelineAxis.js
+init_tslib_es6();
+init_Axis();
 var TimelineAxis = (
   /** @class */
   function(_super) {
@@ -8702,6 +9056,17 @@ var TimelineAxis = (
 var TimelineAxis_default = TimelineAxis;
 
 // node_modules/echarts/lib/component/timeline/SliderTimelineView.js
+init_symbol();
+init_number();
+init_util();
+init_Ordinal();
+init_Time();
+init_Interval();
+init_text();
+init_model();
+init_innerStore();
+init_states();
+init_tooltipMarkup();
 var PI = Math.PI;
 var labelDataIndexStore = makeInner();
 var SliderTimelineView = (
@@ -9255,6 +9620,7 @@ function pointerMoveTo(pointer, progressLine, dataIndex, axis, timelineModel, no
 var SliderTimelineView_default = SliderTimelineView;
 
 // node_modules/echarts/lib/component/timeline/timelineAction.js
+init_util();
 function installTimelineAction(registers) {
   registers.registerAction({
     type: "timelineChange",
@@ -9293,6 +9659,7 @@ function installTimelineAction(registers) {
 }
 
 // node_modules/echarts/lib/component/timeline/preprocessor.js
+init_util();
 function timelinePreprocessor(option) {
   var timelineOpt = option && option.timeline;
   if (!isArray(timelineOpt)) {
@@ -9360,7 +9727,7 @@ function has(obj, attr) {
 }
 
 // node_modules/echarts/lib/component/timeline/install.js
-function install16(registers) {
+function install17(registers) {
   registers.registerComponentModel(SliderTimelineModel_default);
   registers.registerComponentView(SliderTimelineView_default);
   registers.registerSubTypeDefaulter("timeline", function() {
@@ -9371,6 +9738,7 @@ function install16(registers) {
 }
 
 // node_modules/echarts/lib/component/marker/checkMarkerInSeries.js
+init_util();
 function checkMarkerInSeries(seriesOpts, markerType) {
   if (!seriesOpts) {
     return false;
@@ -9384,7 +9752,17 @@ function checkMarkerInSeries(seriesOpts, markerType) {
   return false;
 }
 
+// node_modules/echarts/lib/component/marker/MarkPointModel.js
+init_tslib_es6();
+
 // node_modules/echarts/lib/component/marker/MarkerModel.js
+init_tslib_es6();
+init_util();
+init_env();
+init_dataFormat();
+init_Component();
+init_model();
+init_tooltipMarkup();
 function fillLabel(opt) {
   defaultEmphasis(opt, "label", ["show"]);
 }
@@ -9539,7 +9917,16 @@ var MarkPointModel = (
 );
 var MarkPointModel_default = MarkPointModel;
 
+// node_modules/echarts/lib/component/marker/MarkPointView.js
+init_tslib_es6();
+init_number();
+init_SeriesData();
+
 // node_modules/echarts/lib/component/marker/markerHelper.js
+init_number();
+init_dataStackHelper();
+init_util();
+init_dataValueHelper();
 function hasXOrY(item) {
   return !(isNaN(parseFloat(item.x)) && isNaN(parseFloat(item.y)));
 }
@@ -9656,6 +10043,11 @@ function numCalculate(data, valueDataDim, type) {
 }
 
 // node_modules/echarts/lib/component/marker/MarkerView.js
+init_tslib_es6();
+init_Component2();
+init_util();
+init_model();
+init_states();
 var inner8 = makeInner();
 var MarkerView = (
   /** @class */
@@ -9707,6 +10099,9 @@ var MarkerView = (
 var MarkerView_default = MarkerView;
 
 // node_modules/echarts/lib/component/marker/MarkPointView.js
+init_util();
+init_innerStore();
+init_helper();
 function updateMarkerLayout(mpData, seriesModel, api) {
   var coordSys = seriesModel.coordinateSystem;
   mpData.each(function(idx) {
@@ -9839,7 +10234,7 @@ function createData(coordSys, seriesModel, mpModel) {
 var MarkPointView_default = MarkPointView;
 
 // node_modules/echarts/lib/component/marker/installMarkPoint.js
-function install17(registers) {
+function install18(registers) {
   registers.registerComponentModel(MarkPointModel_default);
   registers.registerComponentView(MarkPointView_default);
   registers.registerPreprocessor(function(opt) {
@@ -9850,6 +10245,7 @@ function install17(registers) {
 }
 
 // node_modules/echarts/lib/component/marker/MarkLineModel.js
+init_tslib_es6();
 var MarkLineModel = (
   /** @class */
   function(_super) {
@@ -9898,6 +10294,14 @@ var MarkLineModel = (
 var MarkLineModel_default = MarkLineModel;
 
 // node_modules/echarts/lib/component/marker/MarkLineView.js
+init_tslib_es6();
+init_SeriesData();
+init_number();
+init_dataStackHelper();
+init_innerStore();
+init_util();
+init_model();
+init_helper();
 var inner9 = makeInner();
 var markLineTransform = function(seriesModel, coordSys, mlModel, item) {
   var data = seriesModel.getData();
@@ -10163,7 +10567,7 @@ function createList(coordSys, seriesModel, mlModel) {
 var MarkLineView_default = MarkLineView;
 
 // node_modules/echarts/lib/component/marker/installMarkLine.js
-function install18(registers) {
+function install19(registers) {
   registers.registerComponentModel(MarkLineModel_default);
   registers.registerComponentView(MarkLineView_default);
   registers.registerPreprocessor(function(opt) {
@@ -10174,6 +10578,7 @@ function install18(registers) {
 }
 
 // node_modules/echarts/lib/component/marker/MarkAreaModel.js
+init_tslib_es6();
 var MarkAreaModel = (
   /** @class */
   function(_super) {
@@ -10219,6 +10624,18 @@ var MarkAreaModel = (
 var MarkAreaModel_default = MarkAreaModel;
 
 // node_modules/echarts/lib/component/marker/MarkAreaView.js
+init_tslib_es6();
+init_color();
+init_SeriesData();
+init_number();
+init_graphic();
+init_states();
+init_util();
+init_model();
+init_helper();
+init_labelStyle();
+init_innerStore();
+init_dataValueHelper();
 var inner10 = makeInner();
 var markAreaTransform = function(seriesModel, coordSys, maModel, item) {
   var item0 = item[0];
@@ -10495,7 +10912,7 @@ function createList2(coordSys, seriesModel, maModel) {
 var MarkAreaView_default = MarkAreaView;
 
 // node_modules/echarts/lib/component/marker/installMarkArea.js
-function install19(registers) {
+function install20(registers) {
   registers.registerComponentModel(MarkAreaModel_default);
   registers.registerComponentView(MarkAreaView_default);
   registers.registerPreprocessor(function(opt) {
@@ -10505,7 +10922,15 @@ function install19(registers) {
   });
 }
 
+// node_modules/echarts/lib/component/legend/install.js
+init_extension();
+
 // node_modules/echarts/lib/component/legend/LegendModel.js
+init_tslib_es6();
+init_util();
+init_Model();
+init_model();
+init_Component();
 var getDefaultSelectorOptions = function(ecModel, type) {
   if (type === "all") {
     return {
@@ -10762,6 +11187,17 @@ var LegendModel = (
 var LegendModel_default = LegendModel;
 
 // node_modules/echarts/lib/component/legend/LegendView.js
+init_tslib_es6();
+init_util();
+init_color();
+init_graphic();
+init_states();
+init_labelStyle();
+init_layout();
+init_Component2();
+init_symbol();
+init_decal();
+init_innerStore();
 var curry2 = curry;
 var each7 = each;
 var Group = Group_default;
@@ -11187,6 +11623,7 @@ function legendFilter(ecModel) {
 }
 
 // node_modules/echarts/lib/component/legend/legendAction.js
+init_util();
 function legendSelectActionHandler(methodName, payload, ecModel) {
   var isAllSelect = methodName === "allSelect" || methodName === "inverseSelect";
   var selectedMap = {};
@@ -11244,7 +11681,7 @@ function installLegendAction(registers) {
 }
 
 // node_modules/echarts/lib/component/legend/installLegendPlain.js
-function install20(registers) {
+function install21(registers) {
   registers.registerComponentModel(LegendModel_default);
   registers.registerComponentView(LegendView_default);
   registers.registerProcessor(registers.PRIORITY.PROCESSOR.SERIES_FILTER, legendFilter);
@@ -11254,7 +11691,13 @@ function install20(registers) {
   installLegendAction(registers);
 }
 
+// node_modules/echarts/lib/component/legend/installLegendScroll.js
+init_extension();
+
 // node_modules/echarts/lib/component/legend/ScrollableLegendModel.js
+init_tslib_es6();
+init_layout();
+init_component();
 var ScrollableLegendModel = (
   /** @class */
   function(_super) {
@@ -11310,6 +11753,10 @@ function mergeAndNormalizeLayoutParams2(legendModel, target, raw) {
 var ScrollableLegendModel_default = ScrollableLegendModel;
 
 // node_modules/echarts/lib/component/legend/ScrollableLegendView.js
+init_tslib_es6();
+init_util();
+init_graphic();
+init_layout();
 var Group2 = Group_default;
 var WH2 = ["width", "height"];
 var XY2 = ["x", "y"];
@@ -11628,20 +12075,25 @@ function installScrollableLegendAction(registers) {
 }
 
 // node_modules/echarts/lib/component/legend/installLegendScroll.js
-function install21(registers) {
-  use(install20);
+function install22(registers) {
+  use(install21);
   registers.registerComponentModel(ScrollableLegendModel_default);
   registers.registerComponentView(ScrollableLegendView_default);
   installScrollableLegendAction(registers);
 }
 
 // node_modules/echarts/lib/component/legend/install.js
-function install22(registers) {
-  use(install20);
+function install23(registers) {
   use(install21);
+  use(install22);
 }
 
+// node_modules/echarts/lib/component/dataZoom/install.js
+init_extension();
+
 // node_modules/echarts/lib/component/dataZoom/InsideZoomModel.js
+init_tslib_es6();
+init_component();
 var InsideZoomModel = (
   /** @class */
   function(_super) {
@@ -11665,7 +12117,13 @@ var InsideZoomModel = (
 );
 var InsideZoomModel_default = InsideZoomModel;
 
+// node_modules/echarts/lib/component/dataZoom/InsideZoomView.js
+init_tslib_es6();
+
 // node_modules/echarts/lib/component/dataZoom/roams.js
+init_throttle();
+init_model();
+init_util();
 var inner11 = makeInner();
 function setViewInfoToCoordSysRecord(api, dataZoomModel, getRange) {
   inner11(api).coordSysRecordMap.each(function(coordSysRecord) {
@@ -11822,6 +12280,7 @@ function installDataZoomRoamProcessor(registers) {
 }
 
 // node_modules/echarts/lib/component/dataZoom/InsideZoomView.js
+init_util();
 var InsideZoomView = (
   /** @class */
   function(_super) {
@@ -11963,7 +12422,7 @@ var getDirectionInfo = {
 var InsideZoomView_default = InsideZoomView;
 
 // node_modules/echarts/lib/component/dataZoom/installDataZoomInside.js
-function install23(registers) {
+function install24(registers) {
   installCommon(registers);
   registers.registerComponentModel(InsideZoomModel_default);
   registers.registerComponentView(InsideZoomView_default);
@@ -11971,6 +12430,8 @@ function install23(registers) {
 }
 
 // node_modules/echarts/lib/component/dataZoom/SliderZoomModel.js
+init_tslib_es6();
+init_component();
 var SliderZoomModel = (
   /** @class */
   function(_super) {
@@ -12059,6 +12520,17 @@ var SliderZoomModel = (
 var SliderZoomModel_default = SliderZoomModel;
 
 // node_modules/echarts/lib/component/dataZoom/SliderZoomView.js
+init_tslib_es6();
+init_util();
+init_event();
+init_graphic();
+init_throttle();
+init_number();
+init_layout();
+init_states();
+init_symbol();
+init_log();
+init_labelStyle();
 var Rect = Rect_default;
 var DEFAULT_LOCATION_EDGE_GAP = 7;
 var DEFAULT_FRAME_BORDER_WIDTH = 1;
@@ -12758,19 +13230,31 @@ function getCursor(orient) {
 var SliderZoomView_default = SliderZoomView;
 
 // node_modules/echarts/lib/component/dataZoom/installDataZoomSlider.js
-function install24(registers) {
+function install25(registers) {
   registers.registerComponentModel(SliderZoomModel_default);
   registers.registerComponentView(SliderZoomView_default);
   installCommon(registers);
 }
 
 // node_modules/echarts/lib/component/dataZoom/install.js
-function install25(registers) {
-  use(install23);
+function install26(registers) {
   use(install24);
+  use(install25);
 }
 
+// node_modules/echarts/lib/component/visualMap/install.js
+init_extension();
+
+// node_modules/echarts/lib/component/visualMap/ContinuousModel.js
+init_tslib_es6();
+init_util();
+
+// node_modules/echarts/lib/component/visualMap/VisualMapModel.js
+init_tslib_es6();
+init_util();
+
 // node_modules/echarts/lib/visual/visualDefault.js
+init_util();
 var visualDefault = {
   /**
    * @public
@@ -12817,6 +13301,9 @@ var defaultOption = {
 var visualDefault_default = visualDefault;
 
 // node_modules/echarts/lib/component/visualMap/VisualMapModel.js
+init_model();
+init_number();
+init_Component();
 var mapVisual = VisualMapping_default.mapVisual;
 var eachVisual = VisualMapping_default.eachVisual;
 var isArray2 = isArray;
@@ -13076,6 +13563,8 @@ var VisualMapModel = (
 var VisualMapModel_default = VisualMapModel;
 
 // node_modules/echarts/lib/component/visualMap/ContinuousModel.js
+init_number();
+init_component();
 var DEFAULT_BAR_BOUND = [20, 140];
 var ContinuousModel = (
   /** @class */
@@ -13246,7 +13735,19 @@ function getColorStopValues(visualMapModel, valueState, dataExtent) {
 }
 var ContinuousModel_default = ContinuousModel;
 
+// node_modules/echarts/lib/component/visualMap/ContinuousView.js
+init_tslib_es6();
+init_util();
+init_LinearGradient();
+init_event();
+
 // node_modules/echarts/lib/component/visualMap/VisualMapView.js
+init_tslib_es6();
+init_util();
+init_graphic();
+init_format();
+init_layout();
+init_Component2();
 var VisualMapView = (
   /** @class */
   function(_super) {
@@ -13339,7 +13840,13 @@ var VisualMapView = (
 );
 var VisualMapView_default = VisualMapView;
 
+// node_modules/echarts/lib/component/visualMap/ContinuousView.js
+init_graphic();
+init_number();
+
 // node_modules/echarts/lib/component/visualMap/helper.js
+init_util();
+init_layout();
 var paramsSet = [["left", "right", "width"], ["top", "bottom", "height"]];
 function getItemAlign(visualMapModel, api, itemSize) {
   var modelOption = visualMapModel.option;
@@ -13375,6 +13882,14 @@ function makeHighDownBatch(batch, visualMapModel) {
 }
 
 // node_modules/echarts/lib/component/visualMap/ContinuousView.js
+init_model();
+init_text();
+init_states();
+init_symbol();
+init_Image();
+init_innerStore();
+init_labelStyle();
+init_event2();
 var linearMap3 = linearMap;
 var each9 = each;
 var mathMin = Math.min;
@@ -13970,6 +14485,8 @@ var visualMapActionHander = function(payload, ecModel) {
 };
 
 // node_modules/echarts/lib/component/visualMap/visualEncoding.js
+init_util();
+init_helper();
 var visualMapEncodingHandlers = [
   {
     createOnAllSeries: true,
@@ -14029,7 +14546,11 @@ function getColorVisual(seriesModel, visualMapModel, value, valueState) {
   }
 }
 
+// node_modules/echarts/lib/component/visualMap/installCommon.js
+init_util();
+
 // node_modules/echarts/lib/component/visualMap/preprocessor.js
+init_util();
 var each10 = each;
 function visualMapPreprocessor(option) {
   var visualMap = option && option.visualMap;
@@ -14081,13 +14602,17 @@ function installCommon2(registers) {
 }
 
 // node_modules/echarts/lib/component/visualMap/installVisualMapContinuous.js
-function install26(registers) {
+function install27(registers) {
   registers.registerComponentModel(ContinuousModel_default);
   registers.registerComponentView(ContinuousView_default);
   installCommon2(registers);
 }
 
 // node_modules/echarts/lib/component/visualMap/PiecewiseModel.js
+init_tslib_es6();
+init_util();
+init_number();
+init_component();
 var PiecewiseModel = (
   /** @class */
   function(_super) {
@@ -14414,6 +14939,12 @@ function normalizeReverse(thisOption, pieceList) {
 var PiecewiseModel_default = PiecewiseModel;
 
 // node_modules/echarts/lib/component/visualMap/PiecewiseView.js
+init_tslib_es6();
+init_util();
+init_graphic();
+init_symbol();
+init_layout();
+init_labelStyle();
 var PiecewiseVisualMapView = (
   /** @class */
   function(_super) {
@@ -14579,19 +15110,22 @@ var PiecewiseVisualMapView = (
 var PiecewiseView_default = PiecewiseVisualMapView;
 
 // node_modules/echarts/lib/component/visualMap/installVisualMapPiecewise.js
-function install27(registers) {
+function install28(registers) {
   registers.registerComponentModel(PiecewiseModel_default);
   registers.registerComponentView(PiecewiseView_default);
   installCommon2(registers);
 }
 
 // node_modules/echarts/lib/component/visualMap/install.js
-function install28(registers) {
-  use(install26);
+function install29(registers) {
   use(install27);
+  use(install28);
 }
 
 // node_modules/echarts/lib/visual/aria.js
+init_util();
+init_model();
+init_palette();
 var DEFAULT_OPTION = {
   label: {
     enabled: true
@@ -14776,6 +15310,7 @@ function ariaVisual(ecModel, api) {
 }
 
 // node_modules/echarts/lib/component/aria/preprocessor.js
+init_util();
 function ariaPreprocessor(option) {
   if (!option || !option.aria) {
     return;
@@ -14793,12 +15328,15 @@ function ariaPreprocessor(option) {
 }
 
 // node_modules/echarts/lib/component/aria/install.js
-function install29(registers) {
+function install30(registers) {
   registers.registerPreprocessor(ariaPreprocessor);
   registers.registerVisual(registers.PRIORITY.VISUAL.ARIA, ariaVisual);
 }
 
 // node_modules/echarts/lib/util/conditionalExpression.js
+init_util();
+init_log();
+init_dataValueHelper();
 var RELATIONAL_EXPRESSION_OP_ALIAS_MAP = {
   value: "eq",
   // PENDING: not good for literal semantic?
@@ -15031,6 +15569,8 @@ function parseConditionalExpression(exprOption, getters) {
 }
 
 // node_modules/echarts/lib/component/transform/filterTransform.js
+init_util();
+init_log();
 var filterTransform = {
   type: "echarts:filter",
   // PENDING: enhance to filter by index rather than create new data
@@ -15079,6 +15619,11 @@ var filterTransform = {
 };
 
 // node_modules/echarts/lib/component/transform/sortTransform.js
+init_types();
+init_log();
+init_util();
+init_model();
+init_dataValueHelper();
 var sampleLog = "";
 if (true) {
   sampleLog = ["Valid config is like:", '{ dimension: "age", order: "asc" }', 'or [{ dimension: "age", order: "asc"], { dimension: "date", order: "desc" }]'].join(" ");
@@ -15182,90 +15727,43 @@ var sortTransform = {
 };
 
 // node_modules/echarts/lib/component/transform/install.js
-function install30(registers) {
+function install31(registers) {
   registers.registerTransform(filterTransform);
   registers.registerTransform(sortTransform);
 }
 
-// node_modules/echarts/lib/component/dataset/install.js
-var DatasetModel = (
-  /** @class */
-  function(_super) {
-    __extends(DatasetModel2, _super);
-    function DatasetModel2() {
-      var _this = _super !== null && _super.apply(this, arguments) || this;
-      _this.type = "dataset";
-      return _this;
-    }
-    DatasetModel2.prototype.init = function(option, parentModel, ecModel) {
-      _super.prototype.init.call(this, option, parentModel, ecModel);
-      this._sourceManager = new SourceManager(this);
-      disableTransformOptionMerge(this);
-    };
-    DatasetModel2.prototype.mergeOption = function(newOption, ecModel) {
-      _super.prototype.mergeOption.call(this, newOption, ecModel);
-      disableTransformOptionMerge(this);
-    };
-    DatasetModel2.prototype.optionUpdated = function() {
-      this._sourceManager.dirty();
-    };
-    DatasetModel2.prototype.getSourceManager = function() {
-      return this._sourceManager;
-    };
-    DatasetModel2.type = "dataset";
-    DatasetModel2.defaultOption = {
-      seriesLayoutBy: SERIES_LAYOUT_BY_COLUMN
-    };
-    return DatasetModel2;
-  }(Component_default)
-);
-var DatasetView = (
-  /** @class */
-  function(_super) {
-    __extends(DatasetView2, _super);
-    function DatasetView2() {
-      var _this = _super !== null && _super.apply(this, arguments) || this;
-      _this.type = "dataset";
-      return _this;
-    }
-    DatasetView2.type = "dataset";
-    return DatasetView2;
-  }(Component_default2)
-);
-function install31(registers) {
-  registers.registerComponentModel(DatasetModel);
-  registers.registerComponentView(DatasetView);
-}
+// node_modules/echarts/lib/export/components.js
+init_install();
 export {
-  install29 as AriaComponent,
-  install5 as AxisPointerComponent,
-  install14 as BrushComponent,
-  install9 as CalendarComponent,
-  install25 as DataZoomComponent,
-  install23 as DataZoomInsideComponent,
-  install24 as DataZoomSliderComponent,
-  install31 as DatasetComponent,
-  install3 as GeoComponent,
-  install10 as GraphicComponent,
-  install6 as GridComponent,
-  install as GridSimpleComponent,
-  install22 as LegendComponent,
-  install20 as LegendPlainComponent,
-  install21 as LegendScrollComponent,
-  install19 as MarkAreaComponent,
-  install18 as MarkLineComponent,
-  install17 as MarkPointComponent,
-  install4 as ParallelComponent,
-  install7 as PolarComponent,
-  install2 as RadarComponent,
-  install8 as SingleAxisComponent,
-  install16 as TimelineComponent,
-  install15 as TitleComponent,
-  install12 as ToolboxComponent,
-  install13 as TooltipComponent,
-  install30 as TransformComponent,
-  install28 as VisualMapComponent,
-  install26 as VisualMapContinuousComponent,
-  install27 as VisualMapPiecewiseComponent
+  install30 as AriaComponent,
+  install6 as AxisPointerComponent,
+  install15 as BrushComponent,
+  install10 as CalendarComponent,
+  install26 as DataZoomComponent,
+  install24 as DataZoomInsideComponent,
+  install25 as DataZoomSliderComponent,
+  install as DatasetComponent,
+  install4 as GeoComponent,
+  install11 as GraphicComponent,
+  install7 as GridComponent,
+  install2 as GridSimpleComponent,
+  install23 as LegendComponent,
+  install21 as LegendPlainComponent,
+  install22 as LegendScrollComponent,
+  install20 as MarkAreaComponent,
+  install19 as MarkLineComponent,
+  install18 as MarkPointComponent,
+  install5 as ParallelComponent,
+  install8 as PolarComponent,
+  install3 as RadarComponent,
+  install9 as SingleAxisComponent,
+  install17 as TimelineComponent,
+  install16 as TitleComponent,
+  install13 as ToolboxComponent,
+  install14 as TooltipComponent,
+  install31 as TransformComponent,
+  install29 as VisualMapComponent,
+  install27 as VisualMapContinuousComponent,
+  install28 as VisualMapPiecewiseComponent
 };
 //# sourceMappingURL=echarts_components.js.map

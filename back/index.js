@@ -56,6 +56,81 @@ app.get('/detalhe_municipio/:municipio', (req, res) => {
     });
 });
 
+app.get('/criticidade_municipios', (req, res) => {
+    const query = `
+        SELECT 
+        tm.nome AS municipio,
+        tic.valor
+        FROM tb_municipio tm
+        INNER JOIN tb_IVSA ti ON ti.municipio = tm.id
+        INNER JOIN tb_IVSA_criterio tic ON ti.id = tic.ivsa
+        INNER JOIN tb_criterio tc ON tc.id = tic.criterio
+        WHERE tc.nome = 'Criticidade'
+        GROUP BY tm.nome, tic.valor
+        ORDER BY tic.nome;
+    `;
+
+    connection.query(query, (err, results) => {
+        if (err) {
+            console.error('Erro ao executar a query:', err);
+            res.status(500).send('Erro ao buscar criticidade dos municipios');
+            return;
+        }
+
+        res.status(200).json(results);
+    });
+});
+
+app.get('/suportabilidade_municipios', (req, res) => {
+    const query = `
+        SELECT 
+        tm.nome AS municipio,
+        tic.valor
+        FROM tb_municipio tm
+        INNER JOIN tb_IVSA ti ON ti.municipio = tm.id
+        INNER JOIN tb_IVSA_criterio tic ON ti.id = tic.ivsa
+        INNER JOIN tb_criterio tc ON tc.id = tic.criterio
+        WHERE tc.nome = 'Suportabilidade'
+        GROUP BY tm.nome, tic.valor
+        ORDER BY tic.nome;
+    `;
+
+    connection.query(query, (err, results) => {
+        if (err) {
+            console.error('Erro ao executar a query:', err);
+            res.status(500).send('Erro ao buscar suportabilidade dos municipios');
+            return;
+        }
+
+        res.status(200).json(results);
+    });
+});
+
+app.get('/incidente_municipios', (req, res) => {
+    const query = `
+        SELECT 
+        tm.nome AS municipio,
+        tic.valor
+        FROM tb_municipio tm
+        INNER JOIN tb_IVSA ti ON ti.municipio = tm.id
+        INNER JOIN tb_IVSA_criterio tic ON ti.id = tic.ivsa
+        INNER JOIN tb_criterio tc ON tc.id = tic.criterio
+        WHERE tc.nome = 'Histórico Incidentes'
+        GROUP BY tm.nome, tic.valor
+        ORDER BY tic.nome;
+    `;
+
+    connection.query(query, (err, results) => {
+        if (err) {
+            console.error('Erro ao executar a query:', err);
+            res.status(500).send('Erro ao buscar histórico de incidentes dos municipios');
+            return;
+        }
+
+        res.status(200).json(results);
+    });
+});
+
 app.listen(port, () => {
     console.log(`Server rodando na porta ${port}`);
 });

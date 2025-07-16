@@ -17,11 +17,11 @@ import {
   ɵɵdefineInjector,
   ɵɵdefineNgModule,
   ɵɵdirectiveInject
-} from "./chunk-GMHOH3SH.js";
+} from "./chunk-K7P6XBPT.js";
 import {
   __async,
   __toESM
-} from "./chunk-ANGF2IQY.js";
+} from "./chunk-GBTWTWDP.js";
 
 // node_modules/ngx-echarts/fesm2022/ngx-echarts.mjs
 var import_rxjs = __toESM(require_cjs(), 1);
