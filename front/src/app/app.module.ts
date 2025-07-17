@@ -3,8 +3,8 @@ import { NgxEchartsModule } from 'ngx-echarts';
 // import echarts core
 import * as echarts from 'echarts/core';
 // import necessary echarts components
-import { BarChart, MapChart } from 'echarts/charts';
-import { DataZoomComponent, GridComponent, TitleComponent, ToolboxComponent, TooltipComponent, VisualMapComponent } from 'echarts/components';
+import { BarChart, MapChart, PieChart } from 'echarts/charts';
+import { DataZoomComponent, GridComponent, LegendComponent, TitleComponent, ToolboxComponent, TooltipComponent, VisualMapComponent } from 'echarts/components';
 import { CanvasRenderer } from 'echarts/renderers';
 import { IvsaService } from './ivsa.service';
 import { AppComponent } from './app.component';
@@ -16,6 +16,7 @@ import { HomeComponent } from './home/home.component';
 import { SobreComponent } from './sobre/sobre.component';
 echarts.use([
   BarChart, 
+  PieChart,
   GridComponent, 
   CanvasRenderer, 
   MapChart, 
@@ -23,7 +24,8 @@ echarts.use([
   TitleComponent,
   VisualMapComponent,
   ToolboxComponent,
-  DataZoomComponent
+  DataZoomComponent,
+  LegendComponent
 ]);
 
 @NgModule({

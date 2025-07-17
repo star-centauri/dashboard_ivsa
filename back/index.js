@@ -131,6 +131,27 @@ app.get('/incidente_municipios', (req, res) => {
     });
 });
 
+app.get('/faixas_ivsa', (req, res) => {
+    const query = `
+        SELECT
+        ti.faixa,
+        COUNT(ti.faixa) as quantidade
+        FROM tb_municipio tm
+        INNER JOIN tb_IVSA ti ON ti.municipio = tm.id
+        GROUP BY ti.faixa;
+    `;
+
+    connection.query(query, (err, results) => {
+        if (err) {
+            console.error('Erro ao executar a query:', err);
+            res.status(500).send('Erro ao buscar faixa do IVSA');
+            return;
+        }
+
+        res.status(200).json(results);
+    });
+});
+
 app.listen(port, () => {
     console.log(`Server rodando na porta ${port}`);
 });

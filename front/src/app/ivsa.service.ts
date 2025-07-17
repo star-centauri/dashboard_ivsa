@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { IVSA } from './models/ivsa.model';
 import { DetailMunicipio } from './models/detail.model';
+import { Faixa } from './models/faixa.model';
 
 @Injectable({
   providedIn: 'root'
@@ -29,6 +30,11 @@ export class IvsaService {
   getIncidentePorMunicipio(): Observable<IVSA[]> {
     const url = `${this.apiUrl}incidente_municipios`;
     return this.http.get<IVSA[]>(url);
+  }
+
+  getFaixaIvsa(): Observable<Faixa[]> {
+    const url = `${this.apiUrl}faixas_ivsa`;
+    return this.http.get<Faixa[]>(url);
   }
 
   getDetalhesMunicipio(municipio: string): Observable<DetailMunicipio[]> {

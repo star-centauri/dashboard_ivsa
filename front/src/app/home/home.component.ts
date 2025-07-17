@@ -2,8 +2,8 @@ import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
 import { NgxEchartsDirective, NgxEchartsModule, provideEchartsCore } from 'ngx-echarts';
 import { CanvasRenderer } from 'echarts/renderers';
-import { DataZoomComponent, GridComponent, TitleComponent, ToolboxComponent, TooltipComponent, VisualMapComponent } from 'echarts/components';
-import { BarChart, MapChart } from 'echarts/charts';
+import { DataZoomComponent, GridComponent, LegendComponent, TitleComponent, ToolboxComponent, TooltipComponent, VisualMapComponent } from 'echarts/components';
+import { BarChart, MapChart, PieChart } from 'echarts/charts';
 import * as echarts from 'echarts/core';
 import { HttpClientModule } from '@angular/common/http';
 import { IVSA } from '../models/ivsa.model';
@@ -12,8 +12,10 @@ import { IvsaService } from '../ivsa.service';
 import rjGeo from '../../assets/geojs-33-mun-rj.json';
 import { RouterModule } from '@angular/router';
 import 'echarts/theme/dark';
+import { Faixa } from '../models/faixa.model';
 echarts.use([
   BarChart, 
+  PieChart,
   GridComponent, 
   CanvasRenderer, 
   MapChart, 
@@ -21,7 +23,8 @@ echarts.use([
   TitleComponent,
   VisualMapComponent,
   ToolboxComponent,
-  DataZoomComponent
+  DataZoomComponent,
+  LegendComponent
 ]);
 
 @Component({
@@ -39,12 +42,14 @@ export class HomeComponent implements OnInit {
   lineCriticidadeOptions: echarts.EChartsCoreOption = {};
   lineSuportabilidadeOptions: echarts.EChartsCoreOption = {};
   lineIncidenteOptions: echarts.EChartsCoreOption = {};
+  pieFaixaOptions: echarts.EChartsCoreOption = {};
 
   municipiosIVSA: IVSA[] = [];
   criticidadeMunicipios: IVSA[] = [];
   suportabilidadeMunicipios: IVSA[] = [];
   incidenteMunicipios: IVSA[] = [];
   detailMunicipio: DetailMunicipio[] | null = null;
+  faixaIVSA: Faixa[] = [];
   
   isBrowser = false;
 
@@ -287,6 +292,50 @@ export class HomeComponent implements OnInit {
     };
   }
 
+  atualizarDadosFaixaIVSA(): void {
+    const result = this.faixaIVSA;
+
+    this.pieFaixaOptions = {
+      title: { text: 'Faixa do IVSA', left: 'center' },
+      tooltip: {
+        trigger: 'item'
+      },
+      legend: {
+        top: '5%',
+        left: 'center'
+      },
+      series: [{
+        name: 'Faixa IVSA',
+        type: 'pie',
+        radius: ['40%', '70%'],
+        avoidLabelOverlap: false,
+        itemStyle: {
+          borderRadius: 10,
+          borderColor: '#fff',
+          borderWidth: 2
+        },
+        label: {
+          show: false,
+          position: 'center'
+        },
+        emphasis: {
+          label: {
+            show: true,
+            fontSize: '30',
+            fontWeight: 'bold'
+          }
+        },
+        labelLine: {
+          show: false
+        },
+        data: result.map(item => ({
+          value: item.quantidade,
+          name: item.faixa
+        }))
+      }]
+    }
+  }
+
   carregarDadosIVSA(): void {
     this.ivsaService.getMunicipioIVSA().subscribe( 
       (data: IVSA[]) => {
@@ -325,6 +374,16 @@ export class HomeComponent implements OnInit {
       },
       (error) => {
         console.log('Erro ao carregar os dados de incidentes: ', error);
+      }
+    );
+
+    this.ivsaService.getFaixaIvsa().subscribe(
+      (data: Faixa[]) => {
+        this.faixaIVSA = data;
+        this.atualizarDadosFaixaIVSA();
+      },
+      (error) => {
+        console.log('Erro ao carregar os dados de faixa IVSA: ', error);
       }
     );
   }
