@@ -4,7 +4,7 @@ FROM node:lts-alpine
 WORKDIR /app
 
 # Copia somente package*.json primeiro
-COPY package.json .
+COPY front/package.json ./
 
 # Instala Angular CLI
 RUN npm install -g @angular/cli
@@ -13,7 +13,7 @@ RUN npm install -g @angular/cli
 RUN npm install
 
 # Copia o restante do código
-COPY . .
+COPY front/ ./
 
 EXPOSE 4200
 CMD ["npm", "start"]
